@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+
+        <menuitem name="Contracts" id="contracts_menu"
+        parent="sale.sale_menu_root"
+        action="action_contracts_view" 
+        sequence="8"/> 
+    </data>
+    
+
+</odoo>

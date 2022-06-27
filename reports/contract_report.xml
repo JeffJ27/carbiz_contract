@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_contract_template">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="o_boxed_header" style="height:160px; text-align:left; border-bottom:2px solid #000; font-family: 'Arial Narrow', Arial, sans-serif;">
+                        <!-- <div style="width:30%; position:relative; float:left; height:160px;">
+                            <img class="img" src="/all_in_trade/static/description/ait_logo.png/" alt="Logo" style="max-height:100px;max-width:70%;"/>
+                        </div>
+                        <div style="width:60%; position:relative; float:left; height:160px;">
+                            <b style="text-align:center;">YUASA INVESTMENTS LIMITED</b><br/>
+                            <b style="text-align:center;">Drive Your Dreams With YUASA</b><br/>
+                            <b style="text-align:center;">Plot 13/15 Dewinton Rise</b><br/>
+                            <b style="text-align:center;">P.O Box 35522, Kampala, Uganda</b><br/>
+                            <b style="text-align:center;">Tel: +256 312 106 599</b><br/>
+                            <b style="text-align:center;">Email: info@allintradelimited.com</b><br/>
+                            <b style="text-align:center;">Website: www.allintradelimited.com</b><br/><br/>
+                        </div> -->
+                    </div>
+
+                <div class="page" style="width:100%; font-family: 'Arial Narrow', Arial, sans-serif;">
+                    <style>
+                    </style>
+                    
+                    <table width="100%">
+                        <thead>
+                            <tr>
+                                <td colspan="4"><b>SALE AGREEMENT OF MOTOR VEHICLE</b></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="height:60px;">
+                                <td width="10%" style="height:50px;"><b>1</b></td>
+                                <td width="90%" style="height:50px;">
+                                    <b>DESCRIPTION OF MOTOR VEHICLE</b>
+                                        <div style="position:relative; float:left; height:50px; width:50%;">
+                                            <b>a) Chassis No: </b><span t-field="o.chassis_no"/><br/>
+                                            <b>c) Model: </b><span t-field="o.model.name"/><br/>
+                                            <b>e) File: </b><span t-field="o.file_no"/>
+                                        </div>
+                                        <div style="position:relative; float:left; height:50px; width:50%;">
+                                            <b>b) Reg No: </b><span t-field="o.reg_no.license_plate"/><br/>
+                                            <b>d) Colour No: </b><span t-field="o.color"/>
+                                        </div>  
+                                </td>
+                            </tr>
+
+                            <tr style="height:60px;">
+                                <td width="10%" style="height:50px;"><b>2</b></td>
+                                <td width="90%" style="height:50px;">
+                                    <b>PURCHASER INFO</b><br/>
+                                        <div style="position:relative; float:left; height:50px; width:50%;">
+                                            <b>a) Purchaser: </b><span t-field="o.customer.name"/><br/>
+                                            <b>c) Phone: </b><span t-field="o.phone"/>
+                                        </div>
+                                        <div style="position:relative; float:left; height:50px; width:50%;">
+                                            <b>b) P.O. Box: </b><span t-field="o.po_box"/><br/>
+                                            <b>d) Address: </b><span t-field="o.address"/>
+                                        </div>                                        
+                                </td>
+                            </tr>
+                            
+
+                            <tr>
+                                <td width="10%" style="font-size:14px;"><b>3</b></td>
+                                <td width="90%">
+                                    <b>PURCHASE PRICE IN Ugshs/US$:</b><br/>
+                                    <b>UGX/US$ (In Figures): </b><span t-field="o.amount"/><br/>
+                                    <b>UGX/US$ (In Words): </b><span t-field="o.amount_words"/><br/>
+                                    <p>a) A non-refundable down payment of UGX/US$ shall be paid to the seller on/or before signing this agreement</p>
+                                    <p>b) The balance of UGX/US$ shall be paid within days but before delivery otherwise agreement will be void and null</p>
+                                    <p>c) The balance of UGX/US$ shall be paid within days from the date of this agreement by post dated cheque in equal installment</p>
+                                    <p>d) All late payments attract a surcharge of 5% per month to cover fluctuations in exchange rates and administrative costs</p>
+
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td width="10%" style="font-size:14px;"><b>4</b></td>
+                                <td width="90%">
+                                    <p>The vehicle is sold "as is" and "where is".</p>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td width="10%" style="font-size:14px;"><b>5</b></td>
+                                <td width="90%">
+                                    <p>The seller will provide the vehicle with a Third Party insurance unless the vehicle is sold tax free or for re-export.</p>
+                                </td>
+                            </tr>
+
+                           
+                            <tr>
+                                <td width="10%" style="font-size:14px;"><b>6</b></td>
+                                <td width="90%">
+                                    <p>The original Registration card will be surrendered to the Purchaser only after the seller has received full sums of money due and transferred
+                                    the log book into the names of the Purchaser or his/her/its nominee(s) at the Purchaser's cost.</p>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td width="10%" style="font-size:14px;"><b>7</b></td>
+                                <td width="90%">
+                                    <p>The Purchaser shall not sell the motor vehicle to a 3rd party nor remove it out of Uganda before completion
+                                    of the balance of the purchase price except with the written consent of the seller.</p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td width="10%" style="font-size:14px;"><b>8</b></td>
+                                 <td width="90%">
+                                    <p>If the purchaser fails to remit the the balance in time, the seller shall be at liberty the vehicle at any time
+                                    after the default and a daily charge of Ushs.25,000 shall be levied against the purchaser to cover the security
+                                    and storage charges.</p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td width="10%" style="font-size:14px;"><b>9</b></td>
+                                <td width="90%">
+                                    <p>Upon impounding the vehicle, the purchaser shall be given 14 days within which to pay up all the outstanding
+                                    balance together with the cost of impounding, storage and security of the vehicle.</p>
+                                </td>
+                            </tr>
+
+                
+                            <tr>
+                                <td width="10%" style="font-size:14px;"></td>
+                                <td width="90%">
+                                    <b>DATED:.......................</b><br/>
+                                    <b>SIGNED:</b><br/>
+                                    <p>For: Yuasa Investments Limited...................................... Purchaser.....................................</p>
+                                    <b>WITNESS:.......................</b><br/>
+                                    <p>Full Name........................................................... Signature.....................................</p>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                    </div>
+
+                    <div>
+                        <table width="100%">
+                        <thead>
+                            <tr>
+                                <td colspan="2" style="font-size:14px;"><b>OTHER TERMS OF THE SALE</b></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td width="10%" style="font-size:14px;"><b>10</b></td>
+                                <td width="90%">
+                                    <p>All payments [except the costs incurred towards the recovery of the balance of the purchase price] shall under all
+                                    circumstances be paid directly to the seller. Any payment made to auctioneers or any 3rd party acting on behalf of the
+                                    seller are not at the purchaser's own risk.</p>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td width="10%" style="font-size:14px;"><b>11</b></td>
+                                <td width="90%">
+                                    <p>For avoidance of doubt, it is hereby expressly agreed that time shall be of essence and that the acceptance by the seller of 
+                                    the purchase price or any part there of the grant of any forbearance or other concession to the purchaser by the seller
+                                    at any time after default has occured shall not be construed  as a waiver of the breach or any breaches of any of the convenants,
+                                    conditions and terms to be performed on the part of the purchaser nor hall it be construed as a waiver of the seller's remedies.</p>
+                                </td>
+                            </tr>
+
+                           
+                            <tr>
+                                <td width="10%" style="font-size:14px;"><b>12</b></td>
+                                <td width="90%">
+                                    <p>If after the motor vehicle has been impounded and the purchaser fails to clear the outstanding payment within
+                                    the aforesaid 14 day's grace period then the seller shall in its absolute discretion and without first giving notice
+                                    to the purchaser or applying for a court order so to resale the motorvehicle to 3rd party by private treaty or any other 
+                                    preferred method and the proceeds recovered from such a sale shall first be applied towards the payment of all sums
+                                    due to the seller and all expenses incurred or incidental to the impounding, storage, security and the resale or prior attempted sale. 
+                                    The residue, if any shall be paid to the purchaser</p>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td width="10%" style="font-size:14px;"><b>13</b></td>
+                                <td width="90%">
+                                    <p>In case the purchaser makes any cheques in favour of the seller for the purchase price or any part thereof, the purchaser
+                                    hereby expressly warrants that there will be sufficient funds on his/her/its account when the said cheque [s] is/are
+                                    presented for payment and that in the case of dishonor of the cheque [s] then the purchaser hereby undertakes to be liable on the said
+                                    cheque [s] both in the civil and criminal liability.</p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td width="10%" style="font-size:14px;"><b>14</b></td>
+                                 <td width="90%">
+                                    <p>Any offence and/or act committed under the Traffic and Road Safety Act, 1998 [or any statutorymodification or 
+                                    replacement there-by] and any other liability incurred here-after in connection with thepossession and/or ownership
+                                     of the motor vehicle shall be the entire responsibility of the purchaser.The purchaser hereby undertakes to indemnify 
+                                     the seller in the event that the seller is compelled tosettle any of the aforesaid liability of the purchaser</p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td width="10%" style="font-size:14px;"><b>15</b></td>
+                                <td width="90%">
+                                    <p>In case of any accident,damage or loss to and/or involving the motor vehicle,the purchaser shall takefull responsibility 
+                                    of the same and the occurrence,accident, damage or loss shall not absolve thepurchaser from performance of his/her/its 
+                                    contractual obligation above named including payment ofany balance that may still be outstanding on the purchase price</p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td width="10%" style="font-size:14px;"><b>16</b></td>
+                                <td width="90%">
+                                    <p>Where the purchaser is a firm,company or any other organization, authority or a government body orinstitution, then 
+                                    the individuals signing on behalf of such purchaser personally guarantee the dueperformance of this agreement and shall 
+                                    personally indemnify the seller or its successor in tile orassignee against alloss,expense, damage claims and costs 
+                                    whatsoever arising out of the invalidityof this agreement or breach thereof or failure by the purchaser to perform this 
+                                    agreement andaccordingly it shall not be necessary for the seller to take legal action against the purchaser beforetaking
+                                     proceedings under this guarantee.</p>
+                                </td>
+                            </tr>
+
+                
+                            <tr>
+                                <td width="10%" style="font-size:14px;"></td>
+                                <td width="90%">
+                                    <b>DATED:.......................</b><br/>
+                                    <b>SIGNED:</b><br/>
+                                    <p>For: Yuasa Investments Limited...................................... Purchaser.....................................</p>
+                                    <b>WITNESS:.......................</b><br/>
+                                    <p>Full Name........................................................... Signature.....................................</p>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                    </div>
+
+                    <div t-attf-class="footer">
+                        <div class="text-center" style="position:relative; float:left; border-bottom: 2px solid black; height:25px; width:100%">
+                            <p style="font-style: italic; font-weight:900;">OTHER TERMS OF THE SALE ARE PRINTED ON THE OVERLEAF<br/></p>
+                        </div>
+                        <div class="text-center" style="width:100%; height:25px; position:relative; float:left;">
+                            <p style="font-style: italic; font-weight:900;">NB:- This agreement is not valid if not stamped and signed<br/></p>
+                        </div>
+                    </div>
+
+
+
+        </t>        
+        </t>
+    </template>
+
+</odoo>
