@@ -51,3 +51,6 @@ class SalesOrderModel(models.Model):
                         customer_contract = self.env['contracts'].create(contract_vals)
 
             return res
+
+class AccountPayment(models.Model):
+    _inherit = 'account.payment'

@@ -29,37 +29,71 @@
             <sheet>
                 <group>
                     <group>
-                        <field name="chassis_no"/>
-                        <field name="model"/>
-                        <field name="file_no"/>
+                        <field name="chassis_no" required="1" attrs="{'readonly': [('state', 'not in', ('draft'))]}" force_save="1"/>
+                        <field name="model" required="1" attrs="{'readonly': [('state', 'not in', ('draft'))]}" force_save="1"/>
+                        <field name="file_no" required="1" attrs="{'readonly': [('state', 'not in', ('draft'))]}" force_save="1"/>
                     </group>
                     <group>
-                        <field name="reg_no"/>
-                        <field name="color"/>
+                        <field name="reg_no" required="1" attrs="{'readonly': [('state', 'not in', ('draft'))]}" force_save="1"/>
+                        <field name="color" required="1" attrs="{'readonly': [('state', 'not in', ('draft'))]}" force_save="1"/>
                     </group>
                 </group>
                 <br/>
                 <group>
                     <group>
-                        <field name="customer"/>
-                        <field name="phone"/>
+                        <field name="customer" required="1" attrs="{'readonly': [('state', 'not in', ('draft'))]}" force_save="1"/>
+                        <field name="phone" required="1" attrs="{'readonly': [('state', 'not in', ('draft'))]}" force_save="1"/>
                     </group>
                     <group>
-                        <field name="po_box"/>
-                        <field name="address"/>
+                        <field name="po_box" required="1" attrs="{'readonly': [('state', 'not in', ('draft'))]}" force_save="1"/>
+                        <field name="address" required="1" attrs="{'readonly': [('state', 'not in', ('draft'))]}" force_save="1"/>
                     </group>
                 </group>
                 <br/>
                 <group>
                     <group>
-                        <field name="down_payment"/>
-                        <field name="balance"/> 
+                        <field name="down_payment" required="1" attrs="{'readonly': [('state', 'not in', ('draft'))]}" force_save="1"/>
+                        <field name="balance_installment" force_save="1" readonly="1"/>
                     </group>
                     <group>
-                        <field name="amount"/>
-                        <field name="amount_words"/>
+                        <field name="balance" required="1" attrs="{'readonly': [('state', 'not in', ('draft'))]}" force_save="1"/> 
                     </group>
                 </group>
+                <br/>
+                <group>
+                    <group>
+                        <field name="days_balance" required="1" attrs="{'readonly': [('state', 'not in', ('draft'))]}" force_save="1"/>
+                        <field name="days_installment" required="1" attrs="{'readonly': [('state', 'not in', ('draft'))]}" force_save="1"/>
+                        <field name="no_install" required="1" attrs="{'readonly': [('state', 'not in', ('draft'))]}" force_save="1"/>
+                    </group>
+                    <group>
+                        <field name="date_delivery" force_save="1" readonly="1"/>
+                        <field name="date_installment" force_save="1" readonly="1"/>
+                    </group>
+                </group>
+                <br/>
+                <group>
+                    <group>
+                        <field name="amount" force_save="1" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="amount_words" force_save="1" readonly="1"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Installments" name="installments_schedule">
+                        <field name="installment_lines">
+                            <tree string="Rent Schedule" editable="bottom">
+                                <field name="payment_date"/>
+                                <field name="amount"/>
+                                <!-- <field name="status"/> 
+                                <button name="create_payment" attrs="{'invisible':['|',('paid','=',True),('status','=','not_paid')]}" string="Create Payment" type="object"/>
+                                <button name="open_payment" attrs="{'invisible':[('paid','=',False)]}" string="Open Payment" type="object"/>
+                                <field name="paid"/> -->
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
             </sheet>
             <div class="oe_chatter">
                 <field name="message_follower_ids" widget="mail_followers"/>
